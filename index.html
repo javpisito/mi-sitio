@@ -1,33 +1,29 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Login</title>
-  <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para Yoselin 💖</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
 </head>
 <body>
 
-  <div class="container">
-    <form class="login-box" id="loginForm">
-      <h2>Bienvenido</h2>
+    <canvas id="hearts"></canvas>
 
-      <div class="input-group">
-        <input type="email" id="email" required />
-        <label>Email</label>
-      </div>
+    <div class="container">
+        <h1>Para ti, Yoselin 💗</h1>
+        <p class="message">
+            De verdad que suerte tuve contigo, feliz cumpleaños, espero que te guste &lt;3
+        </p>
 
-      <div class="input-group">
-        <input type="password" id="password" required />
-        <label>Contraseña</label>
-      </div>
+        <button onclick="mostrarSorpresa()">Presiona aquí amor 💞</button>
 
-      <button type="submit" class="btn">Ingresar</button>
+        <p id="sorpresa" class="hidden">
+            Gracias por ser tú, gracias por estar conmigo.  
+            Eres lo mejor que me ha pasado, mi amor. 💘  
+        </p>
+    </div>
 
-      <p class="msg" id="message"></p>
-    </form>
-  </div>
-
-  <script src="script.js"></script>
 </body>
 </html>

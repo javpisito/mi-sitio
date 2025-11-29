@@ -1,78 +1,116 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Poppins", sans-serif;
+/* Estilo general */
+:root{
+  --bg: #f9f5f7;
+  --card: #ffffff;
+  --accent: #d06b8a;
+  --muted: #6b6b6b;
+  --soft: #fff7fa;
+  --border: #f1d6df;
 }
 
-body {
-    overflow: hidden;
-    background: linear-gradient(135deg, #ff9a9e, #fecfef);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+*{box-sizing: border-box}
+body{
+  margin:0;
+  font-family: "Inter", "Segoe UI", Roboto, sans-serif;
+  background: var(--bg);
+  color: #222;
+  display:flex;
+  min-height:100vh;
+  align-items:center;
+  justify-content:center;
+  padding:20px;
 }
 
-canvas {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
+/* Contenedor principal */
+.container{
+  width:100%;
+  max-width:520px;
 }
 
-.container {
-    text-align: center;
-    background: rgba(255, 255, 255, 0.7);
-    padding: 35px;
-    border-radius: 20px;
-    width: 85%;
-    max-width: 450px;
-    box-shadow: 0 0 25px rgba(255, 255, 255, 0.8);
-    backdrop-filter: blur(5px);
+/* Header */
+.header{
+  text-align:center;
+  margin-bottom:14px;
+}
+.header h1{
+  margin:0;
+  font-size:1.9rem;
+  color:var(--accent);
+}
+.subtitle{
+  margin:6px 0 0 0;
+  color:var(--muted);
+  font-size:0.95rem;
 }
 
-h1 {
-    font-size: 2.2rem;
-    color: #d6336c;
-    margin-bottom: 15px;
+/* Card */
+.card{
+  background:var(--card);
+  padding:22px;
+  border-radius:16px;
+  box-shadow:0 8px 30px rgba(20,20,20,0.06);
+  border:1px solid rgba(0,0,0,0.02);
 }
 
-.message {
-    font-size: 1.2rem;
-    color: #444;
-    margin-bottom: 25px;
+/* Lista de canciones */
+.song-list{
+  list-style:none;
+  margin:0;
+  padding:0;
+  display:flex;
+  flex-direction:column;
+  gap:12px;
 }
 
-button {
-    padding: 12px 20px;
-    border: none;
-    background: #d6336c;
-    color: white;
-    font-size: 1.1rem;
-    border-radius: 12px;
-    cursor: pointer;
-    transition: 0.3s;
+.song-item{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  padding:12px;
+  border-radius:12px;
+  background:var(--soft);
+  border:1px solid var(--border);
 }
 
-button:hover {
-    background: #ad2452;
+/* Enlace de la canción */
+.song-item a{
+  text-decoration:none;
+  color:var(--accent);
+  font-weight:600;
+  flex:1;
+  margin-right:12px;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
 }
 
-.hidden {
-    display: none;
+/* Checkbox */
+.song-item input[type="checkbox"]{
+  width:20px;
+  height:20px;
+  cursor:pointer;
+  accent-color:var(--accent);
 }
 
-#sorpresa {
-    margin-top: 20px;
-    font-size: 1.2rem;
-    color: #68002c;
-    animation: fadein 1s ease-in-out forwards;
+/* Footer contador */
+.footer{
+  margin-top:14px;
+  text-align:right;
+  font-size:0.95rem;
+  color:var(--muted);
 }
 
-@keyframes fadein {
-    from { opacity: 0; }
-    to { opacity: 1; }
+/* Firma */
+.signature{
+  text-align:center;
+  margin-top:14px;
+  color:var(--muted);
+  font-size:0.9rem;
+}
+
+/* Responsive */
+@media (max-width:420px){
+  .card{ padding:18px; }
+  .header h1{ font-size:1.5rem; }
 }

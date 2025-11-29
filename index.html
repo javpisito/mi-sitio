@@ -1,29 +1,34 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Para Yoselin 💖</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js" defer></script>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Carta para Yoselin 💌</title>
+
+  <!-- Vinculamos CSS -->
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <main class="container">
+    <header class="header">
+      <h1>Para la futura novia de Tom York 💖</h1>
+      <p class="subtitle">Una lista de canciones que quiero dedicarte. Cuando la escuches, márcalas. Son todas las canciones que me hacen recordarte. Hay algunas extras pero estas son de las mas importantes. Te amo princesa💖 </p>
+    </header>
 
-    <canvas id="hearts"></canvas>
+    <section class="card">
+      <ul id="songList" class="song-list" aria-live="polite"></ul>
 
-    <div class="container">
-        <h1>Para ti, Yoselin 💗</h1>
-        <p class="message">
-            De verdad que suerte tuve contigo, feliz cumpleaños, espero que te guste &lt;3
-        </p>
+      <div class="footer">
+        <span id="counter">0</span> canciones escuchadas
+      </div>
+    </section>
 
-        <button onclick="mostrarSorpresa()">Presiona aquí amor 💞</button>
+    <footer class="signature">
+      <p>Con cariño — Tom York</p>
+    </footer>
+  </main>
 
-        <p id="sorpresa" class="hidden">
-            Gracias por ser tú, gracias por estar conmigo.  
-            Eres lo mejor que me ha pasado, mi amor. 💘  
-        </p>
-    </div>
-
+  <!-- Vinculamos JS -->
+  <script src="script.js" defer></script>
 </body>
 </html>

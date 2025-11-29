@@ -1,116 +1,126 @@
-/* Estilo general */
-:root{
-  --bg: #f9f5f7;
-  --card: #ffffff;
-  --accent: #d06b8a;
-  --muted: #6b6b6b;
-  --soft: #fff7fa;
-  --border: #f1d6df;
+/* ---- ESTILO GLOBAL ---- */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+  background: #0a0a0f;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  padding: 40px 20px;
 }
 
-*{box-sizing: border-box}
-body{
-  margin:0;
-  font-family: "Inter", "Segoe UI", Roboto, sans-serif;
-  background: var(--bg);
-  color: #222;
-  display:flex;
-  min-height:100vh;
-  align-items:center;
-  justify-content:center;
-  padding:20px;
+/* ---- CONTENEDOR ---- */
+.container {
+  width: 100%;
+  max-width: 550px;
 }
 
-/* Contenedor principal */
-.container{
-  width:100%;
-  max-width:520px;
+/* ---- ENCABEZADO ---- */
+.header h1 {
+  text-align: center;
+  font-size: 2.4rem;
+  color: #ff5ace;
+  text-shadow: 0 0 12px #ff4cc3;
+  margin-bottom: 10px;
 }
 
-/* Header */
-.header{
-  text-align:center;
-  margin-bottom:14px;
-}
-.header h1{
-  margin:0;
-  font-size:1.9rem;
-  color:var(--accent);
-}
-.subtitle{
-  margin:6px 0 0 0;
-  color:var(--muted);
-  font-size:0.95rem;
+.subtitle {
+  text-align: center;
+  color: #d8d8d8;
+  font-size: 1rem;
+  margin-bottom: 25px;
 }
 
-/* Card */
-.card{
-  background:var(--card);
-  padding:22px;
-  border-radius:16px;
-  box-shadow:0 8px 30px rgba(20,20,20,0.06);
-  border:1px solid rgba(0,0,0,0.02);
+/* ---- TARJETA ---- */
+.card {
+  background: rgba(20, 20, 30, 0.9);
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0 0 20px rgba(255, 0, 140, 0.2);
+  backdrop-filter: blur(8px);
 }
 
-/* Lista de canciones */
-.song-list{
-  list-style:none;
-  margin:0;
-  padding:0;
-  display:flex;
-  flex-direction:column;
-  gap:12px;
+/* ---- LISTA DE CANCIONES ---- */
+.song-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
-.song-item{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:12px;
-  padding:12px;
-  border-radius:12px;
-  background:var(--soft);
-  border:1px solid var(--border);
+.song-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #141420;
+  border: 1px solid #2c2c3a;
+  padding: 12px 15px;
+  border-radius: 12px;
+  margin-bottom: 12px;
+  transition: 0.3s ease;
 }
 
-/* Enlace de la canción */
-.song-item a{
-  text-decoration:none;
-  color:var(--accent);
-  font-weight:600;
-  flex:1;
-  margin-right:12px;
-  overflow:hidden;
-  text-overflow:ellipsis;
-  white-space:nowrap;
+.song-item:hover {
+  border-color: #ff4cc3;
+  box-shadow: 0 0 10px rgba(255, 0, 150, 0.3);
 }
 
-/* Checkbox */
-.song-item input[type="checkbox"]{
-  width:20px;
-  height:20px;
-  cursor:pointer;
-  accent-color:var(--accent);
+/* ---- CHECKBOX CUSTOM ---- */
+.song-check {
+  appearance: none;
+  width: 22px;
+  height: 22px;
+  border: 2px solid #ff4cc3;
+  border-radius: 6px;
+  cursor: pointer;
+  position: relative;
+  transition: 0.25s;
 }
 
-/* Footer contador */
-.footer{
-  margin-top:14px;
-  text-align:right;
-  font-size:0.95rem;
-  color:var(--muted);
+.song-check:checked {
+  background: #ff4cc3;
+  box-shadow: 0 0 10px #ff4cc3;
 }
 
-/* Firma */
-.signature{
-  text-align:center;
-  margin-top:14px;
-  color:var(--muted);
-  font-size:0.9rem;
+.song-check:checked::after {
+  content: "❤";
+  position: absolute;
+  top: -3px;
+  left: 3px;
+  font-size: 16px;
+  color: white;
 }
 
-/* Responsive */
-@media (max-width:420px){
-  .card{ padding:18px; }
-  .header h1{ font-size:1.5rem; }
+/* ---- LINK ---- */
+.song-link {
+  color: #ff5ace;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.2s;
+}
+
+.song-link:hover {
+  color: #ff8ee3;
+  text-shadow: 0 0 10px #ff4cc3;
+}
+
+/* ---- CONTADOR ---- */
+.footer {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 1.2rem;
+  color: #ff79d6;
+}
+
+/* ---- FIRMA ---- */
+.signature {
+  margin-top: 25px;
+  text-align: center;
+  color: #999;
+}
+.signature p {
+  font-size: 0.95rem;
+  color: #b4b4b4;
 }

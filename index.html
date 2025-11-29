@@ -3,27 +3,123 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Para Yoselin 💖</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js" defer></script>
+    <title>Carta para Yoselin 💌</title>
+
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background: #f9f5f7;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .card {
+            background: white;
+            width: 100%;
+            max-width: 480px;
+            padding: 30px;
+            border-radius: 18px;
+            box-shadow: 0px 4px 20px rgba(0,0,0,0.08);
+        }
+
+        h1 {
+            text-align: center;
+            color: #d06b8a;
+            margin-bottom: 10px;
+        }
+
+        p {
+            text-align: center;
+            color: #555;
+            margin-top: -5px;
+            margin-bottom: 25px;
+            font-size: 14px;
+        }
+
+        .song-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .song-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 12px 15px;
+            background: #fff7fa;
+            border-radius: 12px;
+            margin-bottom: 12px;
+            border: 1px solid #f1d6df;
+        }
+
+        .song-item a {
+            text-decoration: none;
+            color: #c9436b;
+            font-weight: 600;
+        }
+
+        input[type="checkbox"] {
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
+            accent-color: #d06b8a;
+        }
+    </style>
 </head>
+
 <body>
 
-    <canvas id="hearts"></canvas>
+    <div class="card">
+        <h1>Para Yoselin 💖</h1>
+        <p>Una lista de canciones que me recuerdan a ti.  
+        Cuando escuches una, márcala 💕</p>
 
-    <div class="container">
-        <h1>Para ti, Yoselin 💗</h1>
-        <p class="message">
-            De verdad que suerte tuve contigo, feliz cumpleaños, espero que te guste &lt;3
-        </p>
-
-        <button onclick="mostrarSorpresa()">Presiona aquí amor 💞</button>
-
-        <p id="sorpresa" class="hidden">
-            Gracias por ser tú, gracias por estar conmigo.  
-            Eres lo mejor que me ha pasado, mi amor. 💘  
-        </p>
+        <ul class="song-list" id="songList"></ul>
     </div>
+
+    <script>
+        const canciones = [
+            // EJEMPLOS — aquí tú agregas las tuyas
+            { nombre: "TU TU TU – Clave Especial", link: "https://www.youtube.com/watch?v=xxxxx" },
+            { nombre: "Faldita – Eslabon Armado", link: "https://www.youtube.com/watch?v=xxxxx" },
+            { nombre: "Con Tus Besos – Eslabon Armado", link: "https://www.youtube.com/watch?v=xxxxx" },
+            { nombre: "XOXO – Eslabon Armado", link: "https://www.youtube.com/watch?v=xxxxx" },
+            { nombre: "NO VOY A JUGAR – Eslabon Armado", link: "https://www.youtube.com/watch?v=xxxxx" },
+        ];
+
+        const contenedor = document.getElementById("songList");
+
+        canciones.forEach((cancion, index) => {
+            const item = document.createElement("li");
+            item.className = "song-item";
+
+            const enlace = document.createElement("a");
+            enlace.href = cancion.link;
+            enlace.target = "_blank";
+            enlace.textContent = cancion.nombre;
+
+            const check = document.createElement("input");
+            check.type = "checkbox";
+            check.dataset.id = index;
+
+            // Recuperar estado guardado
+            if (localStorage.getItem("song_" + index) === "true") {
+                check.checked = true;
+            }
+
+            // Guardar cambio
+            check.addEventListener("change", () => {
+                localStorage.setItem("song_" + index, check.checked);
+            });
+
+            item.appendChild(enlace);
+            item.appendChild(check);
+
+            contenedor.appendChild(item);
+        });
+    </script>
 
 </body>
 </html>

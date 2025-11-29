@@ -74,7 +74,7 @@ function renderSongs() {
     li.classList.add("song-item");
 
     li.innerHTML = `
-      <a class="song-link" href="${song.url}" target="_blank">${song.name}</a>
+      <a class="song-link" href="${song.url}" target="_blank">${song.nombre}</a>
       <input type="checkbox" class="song-check" data-id="${index}">
     `;
 
